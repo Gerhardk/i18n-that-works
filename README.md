@@ -1,5 +1,5 @@
 # i18n that works!
-
+[![Circle CI](https://circleci.com/gh/Gerhardk/i18n-that-works.svg?style=svg)](https://circleci.com/gh/Gerhardk/i18n-that-works)
 ## How to?
 
 Create a locales file ...
