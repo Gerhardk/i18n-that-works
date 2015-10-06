@@ -1,0 +1,21 @@
+{
+  "name": "i18n-that-works",
+  "version": "0.0.1",
+  "description": "An i18n node module that actually works!",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "localization"
+  ],
+  "author": "Gerhard Koekemoer",
+  "contributors": ["Daniel Smith"],
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
+  }
+}
