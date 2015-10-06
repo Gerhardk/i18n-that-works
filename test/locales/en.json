@@ -1,3 +1,4 @@
 {
-  "greeting": "Hello"
+  "greeting": "Good Morning",
+  "greetingWithName": "Good Morning %s"
 }
