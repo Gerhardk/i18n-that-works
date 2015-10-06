@@ -1,4 +1,8 @@
 {
   "greeting": "Goeie Môre",
-  "greetingWithName": "Goeie Môre %s"
+  "greetingWithName": "Goeie Môre %s",
+  "greetings": {
+    "morning": "Goeie Môre",
+    "evening": "Goeie Naand"
+  }
 }

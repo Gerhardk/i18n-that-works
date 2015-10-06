@@ -33,4 +33,9 @@ describe('i18n', function() {
   it('works with string replacement', function() {
     expect(i18n.t('greetingWithName', 'Gerhard')).to.equal('Good Morning Gerhard');
   })
+
+  it('works with object notation', function() {
+    expect(i18n.t('greetings.morning')).to.equal('Good Morning');
+    expect(i18n.t('greetings.evening')).to.equal('Good Evening');
+  })
 });

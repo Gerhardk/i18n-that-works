@@ -1,4 +1,8 @@
 {
   "greeting": "Good Morning",
-  "greetingWithName": "Good Morning %s"
+  "greetingWithName": "Good Morning %s",
+  "greetings": {
+    "morning": "Good Morning",
+    "evening": "Good Evening"
+  }
 }

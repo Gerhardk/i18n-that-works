@@ -23,7 +23,16 @@ var i18n = {
 
   translate: function(phrase) {
     var args = [].slice.call(arguments);
-    args[0] = i18n.locales[i18n.locale][phrase];
+    var localeObject = i18n.locales[i18n.locale];
+    if (phrase.indexOf('.') > -1) {
+      phrase.split('.').forEach(function(segment) {
+        localeObject = localeObject[segment];
+      });
+      phrase = localeObject;
+    } else {
+      phrase = localeObject[phrase];
+    }
+    args[0] = phrase;
     return util.format.apply(util, args);
   }
 };
