@@ -33,6 +33,11 @@ describe('i18n', function() {
     expect(i18n.t('greetings.evening')).to.equal('Good Evening');
   });
 
+  it('works with string replacement and object notation', function() {
+    expect(i18n.t('greetingsWithName.morning', 'Daniel')).to.equal('Good Morning Daniel');
+    expect(i18n.t('greetingsWithName.evening', 'Daniel')).to.equal('Good Evening Daniel');
+  });
+
   context('with different defaultLocale', function() {
     beforeEach(function() {
       i18n.configure({

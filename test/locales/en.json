@@ -4,5 +4,9 @@
   "greetings": {
     "morning": "Good Morning",
     "evening": "Good Evening"
+  },
+  "greetingsWithName": {
+    "morning": "Good Morning %s",
+    "evening": "Good Evening %s"
   }
 }
