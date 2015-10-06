@@ -14,7 +14,8 @@ var i18n = {
       var name = path.basename(filename, ext);
       i18n.locales[name] = require(path.join(i18n.directory, filename));
     });
-    i18n.locale = options.defaultLocale;
+    i18n.locale = options.defaultLocale || 'en';
+    i18n.objectNotation = options.objectNotation || '.';
   },
 
   setLocale: function(locale) {
@@ -24,8 +25,8 @@ var i18n = {
   translate: function(phrase) {
     var args = [].slice.call(arguments);
     var localeObject = i18n.locales[i18n.locale];
-    if (phrase.indexOf('.') > -1) {
-      phrase.split('.').forEach(function(segment) {
+    if (phrase.indexOf(i18n.objectNotation) > -1) {
+      phrase.split(i18n.objectNotation).forEach(function(segment) {
         localeObject = localeObject[segment];
       });
       phrase = localeObject;

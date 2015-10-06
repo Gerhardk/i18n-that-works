@@ -8,8 +8,7 @@ var localesDir = path.join(__dirname, 'locales');
 describe('i18n', function() {
   beforeEach(function() {
     i18n.configure({
-      directory: localesDir,
-      defaultLocale: 'en'
+      directory: localesDir
     });
   });
 
@@ -25,17 +24,49 @@ describe('i18n', function() {
     expect(i18n.t('greeting')).to.equal('Good Morning');
   });
 
-  it('works with a different locale', function() {
-    i18n.setLocale('af');
-    expect(i18n.t('greeting')).to.equal('Goeie Môre');
-  });
-
   it('works with string replacement', function() {
     expect(i18n.t('greetingWithName', 'Gerhard')).to.equal('Good Morning Gerhard');
-  })
+  });
 
   it('works with object notation', function() {
     expect(i18n.t('greetings.morning')).to.equal('Good Morning');
     expect(i18n.t('greetings.evening')).to.equal('Good Evening');
-  })
+  });
+
+  context('with different defaultLocale', function() {
+    beforeEach(function() {
+      i18n.configure({
+        directory: localesDir,
+        defaultLocale: 'af'
+      });
+    });
+
+    it('uses the given defaultLocale', function() {
+      expect(i18n.locale).to.equal('af');
+      expect(i18n.t('greeting')).to.equal('Goeie Môre');
+    });
+  });
+
+  context('with a custom object notation', function() {
+    beforeEach(function() {
+      i18n.configure({
+        directory: localesDir,
+        objectNotation: '#'
+      });
+    });
+
+    it('uses the given object notation', function() {
+      expect(i18n.t('greetings#morning')).to.equal('Good Morning');
+      expect(i18n.t('greetings#evening')).to.equal('Good Evening');
+    });
+  });
+
+  describe('.setLocale', function() {
+    it('sets the locale', function() {
+      i18n.setLocale('af');
+
+      expect(i18n.locale).to.equal('af');
+      expect(i18n.t('greeting')).to.equal('Goeie Môre');
+    });
+  });
 });
