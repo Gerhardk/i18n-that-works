@@ -1,10 +1,14 @@
 {
   "name": "i18n-that-works",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An i18n node module that actually works!",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/Gerhardk/i18n-that-works"
   },
   "keywords": [
     "i18n",
